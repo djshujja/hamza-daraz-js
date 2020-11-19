@@ -5,6 +5,18 @@ window.onload = function () {
   document
     .getElementById("search_product")
     .addEventListener("keyup", (e) => serachProduct(e));
+  let range_value = document.getElementById("range-value");
+  let amount_text = document.getElementById("amount-text");
+  let slider = document.getElementById("amount");
+
+  slider.addEventListener("change", () => {
+    amount_text.innerHTML = slider.min;
+  });
+  document.getElementById("filter-btn").addEventListener("click", () => {
+    range_value.innerHTML = slider.value;
+    price_sort(slider.value);
+    console.log(slider.value);
+  });
 };
 
 products = [
@@ -74,9 +86,18 @@ function sortOpt() {
   renderProducts();
 }
 
+function price_sort(val) {
+  products = products.filter(
+    (product) => parseInt(product.price) <= parseInt(val)
+  );
+  renderProducts();
+  products = allProducts;
+}
+
 function renderProducts() {
   const row = document.getElementById("products__main");
   let renderHtml = "";
+  console.log(products);
   products.forEach((product) => {
     const one = `
     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -152,6 +173,7 @@ function serachProduct(event) {
   renderProducts();
 }
 
+/*
 let html = `
 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
 <div class="products-single fix">
@@ -203,3 +225,4 @@ let html = `
   </div>
 </div>
 </div>`;
+*/

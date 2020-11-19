@@ -6,19 +6,19 @@ window.onload = function () {
 };
 
 let product = {
-  name: "Jacket",
-  oldPrice: 65.34,
-  price: 50.22,
+  name: "Women Jacket",
+  oldPrice: 55.34,
+  price: 45.99,
   stock: 10,
   sold: 5,
-  desc: "It's a pretty good Jacket!",
+  desc: "This is a really great jacket!",
   img_1: "images/big-img-01.jpg",
   img_2: "images/big-img-02.jpg",
   img_3: "images/big-img-03.jpg",
 };
 
 function renderProduct() {
-  let sliderHtml = `  <div
+  let sliderHtml = `<div
     id="carousel-example-1"
     class="single-product-slider carousel slide"
     data-ride="carousel"

@@ -302,16 +302,30 @@
                   <h3>Price</h3>
                 </div>
                 <div class="price-box-slider">
-                  <div id="slider-range"></div>
-                  <p>
+                  <!-- <div id="slider-range">
+
+                  </div> -->
+                  <input
+                    id="amount"
+                    type="range"
+                    id="points"
+                    name="points"
+                    min="0"
+                    max="150"
+                  />
+
+                  <p
+                    id="range-value"
+                    style="border: 0; color: #fbb714; font-weight: bold"
+                  >
                     <input
                       type="text"
-                      id="amount"
-                      readonly
+                      id="amount-text"
                       style="border: 0; color: #fbb714; font-weight: bold"
+                      readonly
                     />
-                    <button class="btn hvr-hover" type="submit">Filter</button>
                   </p>
+                  <button class="btn hvr-hover" id="filter-btn">Filter</button>
                 </div>
               </div>
             </div>
